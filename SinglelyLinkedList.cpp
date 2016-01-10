@@ -91,20 +91,20 @@ private:
 	Node *head = NULL;
 };
 
-int	main() {
-	LinkList linklist;
-	for (int i = 0; i < 5; i++)
-	{
-		Node *node = new Node(i);
-		linklist.insert(node, i);
-	}
-	linklist.output();
-	linklist.reverse();
-	linklist.output();
-	linklist.remove(0);
-	linklist.output();
-	linklist.remove(1);
-	linklist.output();
-	system("pause");
-	return 0;
-}
+//int	main() {
+//	LinkList linklist;
+//	for (int i = 0; i < 5; i++)
+//	{
+//		Node *node = new Node(i);
+//		linklist.insert(node, i);
+//	}
+//	linklist.output();
+//	linklist.reverse();
+//	linklist.output();
+//	linklist.remove(0);
+//	linklist.output();
+//	linklist.remove(1);
+//	linklist.output();
+//	system("pause");
+//	return 0;
+//}
