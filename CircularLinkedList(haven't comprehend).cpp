@@ -83,7 +83,6 @@ public:
 		Node *next_node = NULL;
 		Node *origin_head = head;
 		Node *origin_next = head->next;
-		head->next = NULL;
 		do {
 			next_node = current_node->next;
 			current_node->next = head;
@@ -108,20 +107,20 @@ private:
 	Node *head = NULL;
 };
 
-int	main() {
-	LinkList linklist;
-	for (int i = 0; i < 10; i++)
-	{
-		Node *node = new Node(i);
-		linklist.insert(node, i);
-	}
-	linklist.output();
-	linklist.reverse();
-	linklist.output();
-	linklist.remove(0);
-	linklist.output();
-	linklist.remove(1);
-	linklist.output();
-	system("pause");
-	return 0;
-}
+//int	main() {
+//	LinkList linklist;
+//	for (int i = 0; i < 10; i++)
+//	{
+//		Node *node = new Node(i);
+//		linklist.insert(node, i);
+//	}
+//	linklist.output();
+//	linklist.reverse();
+//	linklist.output();
+//	linklist.remove(0);
+//	linklist.output();
+//	linklist.remove(1);
+//	linklist.output();
+//	system("pause");
+//	return 0;
+//}
