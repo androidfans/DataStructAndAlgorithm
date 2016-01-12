@@ -35,17 +35,6 @@ public:
 	}
 };
 
-int operate(char theta, int a, int b) {
-	if (theta == '+') {
-		return a + b;
-	}
-	else
-	{
-		return a * b;
-	}
-}
-
-
 int main() {
 	Stack<int> stack(200);
 
