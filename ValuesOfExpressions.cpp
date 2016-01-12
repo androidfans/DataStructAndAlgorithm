@@ -1,23 +1,7 @@
 #include "DataStructAndAlgorithm.h"
 #include "StackUsingArray.h"
+#define MAX 1000
 
-
-int operate(char theta, int a, int b) {
-	if (theta == '+') {
-		return a + b;
-	}
-	else {
-		return a * b;
-	}
-}
-void calc(StackUsingArray<int> &numbers, StackUsingArray<char> &operators) {
-	int a = numbers.top();
-	numbers.pop();
-	int b = numbers.top();
-	numbers.pop();
-	numbers.push(operate(operators.top(), a, b));
-	operators.pop();
-}
 bool precede(char a, char b) {
 	if (a == '*') {
 		return true;
@@ -27,15 +11,32 @@ bool precede(char a, char b) {
 	}
 }
 
-void valuesOfExpressions() {
+int operate(char theta, int a, int b) {
+	if (theta == '+') {
+		return a + b;
+	}
+	else {
+		return a * b;
+	}
+}
+
+void calc(StackUsingArray<int> &numbers, StackUsingArray<char> &operators) {
+	int a = numbers.top();
+	numbers.pop();
+	int b = numbers.top();
+	numbers.pop();
+	numbers.push(operate(operators.top(), a, b));
+	operators.pop();
+}
+
+
+int valuesOfExpressions() {
 	string buffer;
-	int n;
-	cin >> n;
-	StackUsingArray<int> numbers(n);
-	StackUsingArray<char> operators(n);
 	cin >> buffer;
+	StackUsingArray<int> numbers(MAX);
+	StackUsingArray<char> operators(MAX);
 	int i = 0;
-	while (i < n) {
+	while (i < buffer.length()) {
 		if (isdigit(buffer[i])) {
 			numbers.push(buffer[i] - '0');
 			i++;
@@ -53,11 +54,11 @@ void valuesOfExpressions() {
 	while (!operators.empty()) {
 		calc(numbers, operators);
 	}
-	cout << numbers.top() << endl;
+	return numbers.top();
 }
 
 int main() {
-	valuesOfExpressions();
+	cout << valuesOfExpressions();
 	system("pause");
 	return 0;
 }
