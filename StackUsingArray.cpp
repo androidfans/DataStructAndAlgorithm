@@ -1,5 +1,4 @@
-#include <iostream>
-#include <cassert>
+#include "DataStructAndAlgorithm.h"
 #include "StackUsingArray.h"
 using namespace std;
 

@@ -1,4 +1,5 @@
 #pragma once
+#include "DataStructAndAlgorithm.h"
 template<typename T>
 class QueueUsingArray {
 private:

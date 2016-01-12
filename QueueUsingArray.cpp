@@ -1,5 +1,4 @@
-#include <iostream>
-#include <cassert>
+#include "DataStructAndAlgorithm.h"
 #include "QueueUsingArray.h"
 using namespace std;
 
@@ -51,16 +50,16 @@ void QueueUsingArray<T>::output() {
 
 
 
-int main() {
-	QueueUsingArray<int> queue(100);
-	for (int i = 1; i <= 10; i++) {
-		queue.push(i);
-	}
-	queue.output();
-	cout << queue.front() << endl;
-	queue.pop();
-	queue.output();
-	
-	system("pause");
-	return 0;
-}
+//int main() {
+//	QueueUsingArray<int> queue(100);
+//	for (int i = 1; i <= 10; i++) {
+//		queue.push(i);
+//	}
+//	queue.output();
+//	cout << queue.front() << endl;
+//	queue.pop();
+//	queue.output();
+//	
+//	system("pause");
+//	return 0;
+//}

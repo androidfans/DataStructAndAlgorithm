@@ -1,5 +1,4 @@
-#include <iostream>
-using namespace std;
+#include "DataStructAndAlgorithm.h"
 
 class Node {
 public:
