@@ -6,6 +6,7 @@ private:
 	T *data;
 public:
 	StackUsingArray(int _capacity);
+	~StackUsingArray();
 	bool push(T element);
 	bool pop();
 	bool empty();
@@ -48,4 +49,9 @@ bool StackUsingArray<T>::empty() {
 		return true;
 	}
 	return false;
+}
+
+template <class T>
+StackUsingArray<T>::~StackUsingArray() {
+	delete[] data;
 }

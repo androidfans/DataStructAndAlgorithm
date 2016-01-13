@@ -56,9 +56,3 @@ int valuesOfExpressions() {
 	}
 	return numbers.top();
 }
-
-int main() {
-	cout << valuesOfExpressions();
-	system("pause");
-	return 0;
-}
