@@ -1,34 +1,22 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "DataStructAndAlgorithm.h"
-#include "OpenAdressingHashTable.h"
+#include "SeparateChainingHashTable.h"
+#include <string>
+using namespace std;
+
 
 int main() {
-	OpenAdressingHashTable hashtable(3);
-	int buffer;
+	freopen("data.in", "r", stdin);
+	freopen("data.out", "w", stdout);
 	int n;
 	cin >> n;
-	for (int i = 1; i <= n; i++) {
-		cin >> buffer;
-		int ans = hashtable.insert(buffer);
-		if (ans == 0) {
-			cout << "insert failed!" << endl;
-		}
-		else if (ans == 1) {
-			cout << "insert success!" << endl;
-		}
-		else if (ans == 2) {
-			cout << "It already exists!" << endl;
-		}
+	SeparateChainingHashTable hashtable(n);
+	int temp;
+	cin >> n;
+	for (int i = 0; i < n; i++) {
+		cin >> temp;
+		hashtable.insert(temp);
 	}
-	int temp_pos, temp_times;
-	for (int i = 0; i < 100; i++) {
-		cin >> buffer;
-		if (hashtable.search(buffer, temp_pos, temp_times)) {
-			cout << "search success!" << endl;
-		}
-		else {
-			cout << "search failed!" << endl;
-		}
-	}
-	system("pause");
+	hashtable.output();
 	return 0;
 }
