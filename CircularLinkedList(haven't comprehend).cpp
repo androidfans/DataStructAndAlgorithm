@@ -1,21 +1,21 @@
 #include "DataStructAndAlgorithm.h"
 
-class Node {
+class LinkedListNode {
 public:
 	int data;
-	Node *next = NULL;
-	Node(int _data) {
+	LinkedListNode *next = NULL;
+	LinkedListNode(int _data) {
 		data = _data;
 	}
 };
 
-class SinglelyLinkedList {
+class CircularLinkedList {
 public:
-	Node* find(int index) {
+	LinkedListNode* find(int index) {
 		if (head == NULL) {
 			return NULL;
 		}
-		Node *current_node = head->next;
+		LinkedListNode *current_node = head->next;
 		int count = 0;
 		while (current_node != head&&count != index) {
 			current_node = current_node->next;
@@ -27,7 +27,7 @@ public:
 		return NULL;
 	}
 
-	void insert(Node *node, int index) {
+	void insert(LinkedListNode *node, int index) {
 		if (head == NULL) {
 			head = node;
 			head->next = head;
@@ -38,7 +38,7 @@ public:
 			head->next = node;
 			return;
 		}
-		Node *pre_node = find(index - 1);
+		LinkedListNode *pre_node = find(index - 1);
 		if (pre_node != NULL) {
 			node->next = pre_node->next;
 			pre_node->next = node;
@@ -52,14 +52,14 @@ public:
 		if (head == NULL) {
 			return;
 		}
-		Node *delete_node = NULL;
+		LinkedListNode *delete_node = NULL;
 		if (index == 0) {
 			delete_node = head->next;
 			head->next = delete_node->next;
 			delete delete_node;
 			return;
 		}
-		Node *pre_node = find(index - 1);
+		LinkedListNode *pre_node = find(index - 1);
 		if (!pre_node) {
 			return;
 		}
@@ -78,10 +78,10 @@ public:
 		if (head == NULL) {
 			return;
 		}
-		Node *current_node = head->next;
-		Node *next_node = NULL;
-		Node *origin_head = head;
-		Node *origin_next = head->next;
+		LinkedListNode *current_node = head->next;
+		LinkedListNode *next_node = NULL;
+		LinkedListNode *origin_head = head;
+		LinkedListNode *origin_next = head->next;
 		do {
 			next_node = current_node->next;
 			current_node->next = head;
@@ -95,7 +95,7 @@ public:
 		if (head == NULL) {
 			cout << "Linked List is NULL" << endl;
 		}
-		Node *current_node = head->next;
+		LinkedListNode *current_node = head->next;
 		do {
 			cout << current_node->data << " ";
 			current_node = current_node->next;
@@ -103,5 +103,5 @@ public:
 		cout << endl;
 	}
 private:
-	Node *head = NULL;
+	LinkedListNode *head = NULL;
 };

@@ -19,7 +19,7 @@ int SeparateChainingHashTable::hash(int element) {
 bool SeparateChainingHashTable::search(int element,int &pos) {
 	pos = hash(element);
 	SinglelyLinkedList &list = data[pos];
-	for (Node *node = list.head; node != nullptr; node = node->next) {
+	for (LinkedListNode *node = list.head; node != nullptr; node = node->next) {
 		if (node->data == element) {
 			return true;
 		}
@@ -34,18 +34,20 @@ int SeparateChainingHashTable::insert(int element) {
 	}
 	else
 	{
-		Node *node = new Node(element);
+		LinkedListNode *node = new LinkedListNode(element);
 		pos = hash(element);
 		SinglelyLinkedList &list = data[pos];
 		if (list.head == nullptr) {
 			list.head = node;
+			return pos;
 		}
 		else
 		{
-			Node *pre_node;
+			LinkedListNode *pre_node;
 			for (pre_node = list.head; pre_node->next != nullptr; pre_node = pre_node->next);
 			node->next = pre_node->next;
 			pre_node->next = node;
+			return pos;
 		}
 	}
 }
@@ -54,7 +56,7 @@ void SeparateChainingHashTable::output() {
 	for (int i = 0; i < capacity; i++) {
 		SinglelyLinkedList list = data[i];
 		cout << i << " :";
-		for (Node *node = list.head; node != nullptr; node = node->next) {
+		for (LinkedListNode *node = list.head; node != nullptr; node = node->next) {
 			cout << node->data << (node->next == nullptr?"":"<-");
 		}
 		cout << endl;

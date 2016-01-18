@@ -1,18 +1,18 @@
 #pragma once
-class Node {
+class LinkedListNode {
 public:
 	int data;
-	Node *next;
-	Node(int _data);
+	LinkedListNode *next;
+	LinkedListNode(int _data);
 };
 
 class SinglelyLinkedList {
 public:
-	Node *head = nullptr;
+	LinkedListNode *head = nullptr;
 
-	Node* find(int index);
+	LinkedListNode* find(int index);
 
-	void insert(Node *node, int index);
+	void insert(LinkedListNode *node, int index);
 
 	void remove(int index);
 

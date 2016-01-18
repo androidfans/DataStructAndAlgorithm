@@ -2,5 +2,5 @@
 #include <iostream>
 #include <cassert>
 #include <string>
-#include "OpenAdressingHashTable.h"
+#include <algorithm>
 using namespace std;
