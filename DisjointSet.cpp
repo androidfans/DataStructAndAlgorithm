@@ -45,7 +45,7 @@ int DisjointSet::find_set(int element)
 	int ancestor = element;
 	if (ancestor != father[ancestor])
 	{
-		father[ancestor] = find_set(ancestor);
+		father[ancestor] = find_set(father[ancestor]);
 	}
 	return father[ancestor];
 }
